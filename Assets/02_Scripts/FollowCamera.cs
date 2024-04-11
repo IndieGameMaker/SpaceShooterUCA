@@ -13,14 +13,17 @@ public class FollowCamera : MonoBehaviour
     // 타겟으로 부터 떨어질 거리
     [Range(2.0f, 20.0f)]
     [SerializeField] private float distance = 10.0f;
+    // Y축 높이
+    [SerializeField] private float height = 2.5f;
 
     void Start()
     {
-
+        mainCamera = GetComponent<Transform>();
     }
 
-    void Update()
+    void LateUpdate()
     {
-
+        // 추적 대상으로 부터 뒤쪽으로 이동
+        mainCamera.position = target.position - (target.forward * distance) + (Vector3.up * height);
     }
 }
