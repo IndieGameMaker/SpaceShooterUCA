@@ -589,8 +589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1724379703}
-  distance: 10
-  height: 2.5
+  distance: 2.3
+  height: 1.75
+  offset: 1.64
 --- !u!1001 &1059835079
 PrefabInstance:
   m_ObjectHideFlags: 0
