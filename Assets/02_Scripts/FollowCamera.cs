@@ -11,7 +11,8 @@ public class FollowCamera : MonoBehaviour
     private Transform mainCamera;
 
     // 타겟으로 부터 떨어질 거리
-
+    [Range(2.0f, 20.0f)]
+    [SerializeField] private float distance = 10.0f;
 
     void Start()
     {
