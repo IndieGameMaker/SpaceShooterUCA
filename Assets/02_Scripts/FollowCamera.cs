@@ -16,6 +16,9 @@ public class FollowCamera : MonoBehaviour
     // Y축 높이
     [SerializeField] private float height = 2.5f;
 
+    // Offset
+    [SerializeField] private float offset = 1.0f;
+
     void Start()
     {
         mainCamera = GetComponent<Transform>();
@@ -25,5 +28,6 @@ public class FollowCamera : MonoBehaviour
     {
         // 추적 대상으로 부터 뒤쪽으로 이동
         mainCamera.position = target.position - (target.forward * distance) + (Vector3.up * height);
+        mainCamera.LookAt(target.position + (Vector3.up * offset));
     }
 }
