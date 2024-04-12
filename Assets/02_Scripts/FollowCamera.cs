@@ -35,4 +35,10 @@ public class FollowCamera : MonoBehaviour
         mainCamera.position = target.position - (target.forward * distance) + (Vector3.up * height);
         mainCamera.LookAt(target.position + (Vector3.up * offset));
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = _color;
+        Gizmos.DrawSphere(target.position + (Vector3.up * offset), _radius);
+    }
 }
