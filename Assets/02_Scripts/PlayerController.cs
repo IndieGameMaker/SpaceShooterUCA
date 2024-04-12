@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveDir.normalized * Time.deltaTime * speed);
         transform.Rotate(Vector3.up * Time.deltaTime * r * 200.0f);
 
+        PlayerAnim();
     }
 
     void PlayerAnim()
