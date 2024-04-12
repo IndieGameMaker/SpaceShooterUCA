@@ -8,9 +8,12 @@ public class PlayerController : MonoBehaviour
     private float v;
     private float r;
 
+    [SerializeField]
+    private Animation anim;
+
     void Start()
     {
-
+        anim = GetComponent<Animation>();
     }
 
     /* 단위벡터 (Unit Vector) / 정규화 벡터(Normalized Vector)
@@ -43,5 +46,7 @@ public class PlayerController : MonoBehaviour
 
         //transform.position += Vector3.forward * v * Time.deltaTime * 5.0f;
     }
+
+
 
 }
