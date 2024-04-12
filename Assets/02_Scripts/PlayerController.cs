@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private float h;
     private float v;
     private float r;
+    private float speed = 5.0f;
 
     [SerializeField]
     private Animation anim;
@@ -15,19 +16,6 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animation>();
     }
-
-    /* 단위벡터 (Unit Vector) / 정규화 벡터(Normalized Vector)
-
-        Vector3.forward = Vector3(0, 0, 1)
-        Vector3.up      = Vector3(0, 1, 0)
-        Vector3.right   = Vector3(1, 0, 0)
-    
-        Vector3.one  = Vector3(1, 1, 1)
-        Vector3.zero = Vector3(0, 0, 0)
-
-    */
-
-    private float speed = 5.0f;
 
     void Update()
     {
@@ -41,10 +29,33 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveDir.normalized * Time.deltaTime * speed);
         transform.Rotate(Vector3.up * Time.deltaTime * r * 200.0f);
 
-        // Debug.Log($"moveDir = {moveDir.magnitude}");
-        // Debug.Log($"moveDir 정규화 = {moveDir.normalized.magnitude}");
+    }
 
-        //transform.position += Vector3.forward * v * Time.deltaTime * 5.0f;
+    void PlayerAnim()
+    {
+        if (v >= 0.1f) // Up Arrow, W // 전진
+        {
+            anim.CrossFade("RunF", 0.3f);
+        }
+        else if (v <= -0.1f) // 후진
+        {
+            anim.CrossFade("RunB", 0.3f);
+        }
+        else if (h >= 0.1f) // 오른쪽 이동
+        {
+            anim.CrossFade("RunR", 0.3f);
+        }
+        else if (h <= -0.1f) // 왼쪽 이동
+        {
+            anim.CrossFade("RunL", 0.3f);
+        }
+        else
+        {
+            anim.CrossFade("Idle", 0.1f);
+
+            // anim.clip = anim.GetClip("Idle");
+            // anim.Play()
+        }
     }
 
 
