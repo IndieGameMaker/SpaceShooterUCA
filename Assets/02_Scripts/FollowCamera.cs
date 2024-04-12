@@ -19,6 +19,11 @@ public class FollowCamera : MonoBehaviour
     // Offset
     [SerializeField] private float offset = 1.0f;
 
+    // Gizmos Color
+    [SerializeField] private Color _color = Color.yellow;
+    // Gizmos Radius
+    [SerializeField] private float _radius = 0.3f;
+
     void Start()
     {
         mainCamera = GetComponent<Transform>();
