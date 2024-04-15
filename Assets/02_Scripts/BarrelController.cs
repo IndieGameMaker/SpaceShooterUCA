@@ -12,6 +12,18 @@ public class BarrelController : MonoBehaviour
     [SerializeField] private Texture[] textures;
     private int idx = 0;
 
+    void Start()
+    {
+        // 난수 발생
+        /*
+        Random.Range(1, 10);        // 1,2,3,...,9
+        Random.Range(1.0f, 10.0f);  // 1.0f ~ 10.0f
+        */
+
+
+    }
+
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.collider.CompareTag("BULLET"))
