@@ -51,3 +51,11 @@ public class BarrelController : MonoBehaviour
         Destroy(this.gameObject, 2.0f);
     }
 }
+
+
+/*
+    - Procedural Sky 
+    - 6-Sided Sky (Skybox)
+    - Panoramic Sky
+
+*/
