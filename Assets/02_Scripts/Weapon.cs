@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _firePos;
+    [SerializeField] private AudioClip _fireSfx;
 
     void Update()
     {
