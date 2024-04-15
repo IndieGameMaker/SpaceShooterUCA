@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Rider.Unity.Editor;
 using UnityEngine;
 
 public class BarrelController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private int hitCount;
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            if (++hitCount == 3)
+            {
+                // 폭발 효과
+                ExpBarrel();
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void ExpBarrel()
     {
-
+        var rb = this.gameObject.AddComponent<Rigidbody>();
+        rb.AddExplosionForce(1500.0f, transform.position, 5.0f, 1800.0f);
     }
 }
