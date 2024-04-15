@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Rider.Unity.Editor;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BarrelController : MonoBehaviour
 {
+    [SerializeField] private GameObject _expEffect;
     private int hitCount;
 
     void OnCollisionEnter(Collision coll)
@@ -22,6 +24,9 @@ public class BarrelController : MonoBehaviour
     void ExpBarrel()
     {
         var rb = this.gameObject.AddComponent<Rigidbody>();
-        rb.AddExplosionForce(1500.0f, transform.position, 5.0f, 1800.0f);
+
+        Vector3 pos = Random.insideUnitSphere;
+
+        rb.AddExplosionForce(1500.0f, transform.position + pos, 5.0f, 1800.0f);
     }
 }
