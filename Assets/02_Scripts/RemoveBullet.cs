@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
@@ -23,8 +23,14 @@ public class RemoveBullet : MonoBehaviour
 
         if (coll.collider.CompareTag("BULLET"))
         {
-            Destroy(coll.gameObject);
+            DestroyBullet(coll);
         }
+    }
+
+    void DestroyBullet(Collision coll)
+    {
+        Instantiate(_sparkEffect, coll.transform.position, Quaternion.identity);
+        Destroy(coll.gameObject);
     }
 
 }
