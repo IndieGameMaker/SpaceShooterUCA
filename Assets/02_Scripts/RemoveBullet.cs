@@ -15,6 +15,8 @@ public class RemoveBullet : MonoBehaviour
         OnTriggerExit
     */
 
+    [SerializeField] private GameObject _sparkEffect;
+
     void OnCollisionEnter(Collision coll)
     {
         //if (coll.collider.tag == "BULLET") // GC 발생
