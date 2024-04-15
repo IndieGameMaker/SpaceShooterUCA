@@ -12,9 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animation anim;
 
+    private Animator animator;
+
     void Start()
     {
-        anim = GetComponent<Animation>();
+        anim = GetComponent<Animation>();   // Legacy Animation Type
+        animator = GetComponent<Animator>();// Mecanim Animation Type
     }
 
     void Update()
@@ -29,7 +32,9 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveDir.normalized * Time.deltaTime * speed);
         transform.Rotate(Vector3.up * Time.deltaTime * r * 200.0f);
 
-        PlayerAnim();
+        animator.SetFloat("forward", v);
+
+        //PlayerAnim();
     }
 
     void PlayerAnim()
