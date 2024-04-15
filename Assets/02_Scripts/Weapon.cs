@@ -25,6 +25,12 @@ public class Weapon : MonoBehaviour
 
     void Fire()
     {
+        // 총소리 발생
+        // _audio.clip = _fireSfx;
+        // _audio.Play();
+
+        _audio.PlayOneShot(_fireSfx, 0.8f);
+
         Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
     }
 }
