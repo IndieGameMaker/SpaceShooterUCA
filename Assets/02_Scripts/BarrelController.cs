@@ -20,7 +20,8 @@ public class BarrelController : MonoBehaviour
         Random.Range(1.0f, 10.0f);  // 1.0f ~ 10.0f
         */
 
-
+        idx = Random.Range(0, textures.Length); // 0, 1, 2
+        GetComponentInChildren<MeshRenderer>().material.mainTexture = textures[idx];
     }
 
 
