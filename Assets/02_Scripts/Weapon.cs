@@ -75,3 +75,18 @@ public class Weapon : MonoBehaviour
         _fireLight.intensity = 0.0f;
     }
 }
+
+/*
+    NPC AI 구현 기법
+
+    1. 유한 상태 머신 (Finite State Machine) FSM
+        - HFSM
+    2. Behaviour Tree
+
+    MUSE Chat
+    MUSE Texture
+    MUSE Animation
+    MUSE Behaviour Tree
+    Sentise
+
+*/
