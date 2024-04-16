@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up * Time.deltaTime * r * 200.0f);
 
         animator.SetFloat("forward", v);
+        animator.SetFloat("strafe", h);
 
         //PlayerAnim();
     }
