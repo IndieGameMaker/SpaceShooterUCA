@@ -21,6 +21,11 @@ public class MonsterController : MonoBehaviour
     {
         _monsterTr = transform; // GetComponent<Transform>();
         _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
+
+        if (_playerTr == null)
+        {
+            Debug.LogError("Player not found!");
+        }
     }
 
     // Update is called once per frame
