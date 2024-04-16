@@ -28,9 +28,22 @@ public class MonsterController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // 두점간의 거리
+        float distance = Vector3.Distance(_monsterTr.position, _playerTr.position);
 
+        if (distance <= _attackDist) // 공격 사정거리 이내인 경우
+        {
+            _state = State.ATTACK;
+        }
+        else if (distance <= _traceDist)
+        {
+            _state = State.TRACE;
+        }
+        else
+        {
+            _state = State.IDLE;
+        }
     }
 }
