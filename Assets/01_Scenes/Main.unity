@@ -1329,6 +1329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1da1c72d2ec4d528f921eb0f206aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _state: 0
+  _traceDist: 10
+  _attackDist: 2
 --- !u!1001 &1059835079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1351,6 +1354,10 @@ PrefabInstance:
     - target: {fileID: 100046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
+      propertyPath: m_TagString
+      value: PLAYER
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
       propertyPath: m_RootOrder
