@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     {
         _audio = GetComponent<AudioSource>();
         _muzzleFlash = _firePos.GetComponentInChildren<MeshRenderer>();
+        _muzzleFlash.enabled = false;
     }
 
     void Update()

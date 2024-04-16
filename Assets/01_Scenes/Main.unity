@@ -470,7 +470,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561556052}
-  m_LocalRotation: {x: -0.026572248, y: 0.041859433, z: 0.0011136696, w: 0.9987695}
+  m_LocalRotation: {x: -0.026572224, y: 0.041859396, z: 0.0011136676, w: 0.9987695}
   m_LocalPosition: {x: -0.11, y: 1.84, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1039,7 +1039,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.026572248, y: 0.041859433, z: 0.0011136696, w: 0.9987695}
+  m_LocalRotation: {x: -0.026572224, y: 0.041859396, z: 0.0011136676, w: 0.9987695}
   m_LocalPosition: {x: -0.11, y: 1.84, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1495,6 +1495,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 2695572712193639358, guid: 050fcc3026ee641fab6aab1850151a36, type: 3}
   _firePos: {fileID: 872627388}
   _fireSfx: {fileID: 8300000, guid: 641ff25f5da444ddf8874d961a56f0c9, type: 3}
+  _muzzleFlash: {fileID: 0}
 --- !u!82 &1724379708
 AudioSource:
   m_ObjectHideFlags: 0
