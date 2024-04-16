@@ -8,12 +8,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _firePos;
     [SerializeField] private AudioClip _fireSfx;
+    [SerializeField] private MeshRenderer _muzzleFlash;
 
     private AudioSource _audio;
 
     void Start()
     {
         _audio = GetComponent<AudioSource>();
+        _muzzleFlash = _firePos.GetComponentInChildren<MeshRenderer>();
     }
 
     void Update()
