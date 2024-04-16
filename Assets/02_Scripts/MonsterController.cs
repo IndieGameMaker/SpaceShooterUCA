@@ -17,6 +17,8 @@ public class MonsterController : MonoBehaviour
     private Transform _monsterTr;
     private Transform _playerTr;
 
+    [SerializeField] private bool _isDie = false;
+
     void Start()
     {
         _monsterTr = transform; // GetComponent<Transform>();
@@ -26,25 +28,35 @@ public class MonsterController : MonoBehaviour
         {
             Debug.LogError("Player not found!");
         }
+
+        StartCoroutine(CheckMonsterState());
     }
 
-    void Update()
+    IEnumerator CheckMonsterState()
     {
-        // 두점간의 거리
-        //float distance = Vector3.Distance(_monsterTr.position, _playerTr.position);
-        float distance = (_monsterTr.position - _playerTr.position).sqrMagnitude;
+        while (_isDie == false)
+        {
+            // 두점간의 거리
+            //float distance = Vector3.Distance(_monsterTr.position, _playerTr.position);
+            float distance = (_monsterTr.position - _playerTr.position).sqrMagnitude;
 
-        if (distance <= _attackDist * _attackDist) // 공격 사정거리 이내인 경우
-        {
-            _state = State.ATTACK;
-        }
-        else if (distance <= _traceDist * _traceDist)
-        {
-            _state = State.TRACE;
-        }
-        else
-        {
-            _state = State.IDLE;
+            Debug.Log(Mathf.Sqrt(distance));
+
+            if (distance <= _attackDist * _attackDist) // 공격 사정거리 이내인 경우
+            {
+                _state = State.ATTACK;
+            }
+            else if (distance <= _traceDist * _traceDist)
+            {
+                _state = State.TRACE;
+            }
+            else
+            {
+                _state = State.IDLE;
+            }
+
+            yield return new WaitForSeconds(0.3f);
         }
     }
+
 }
