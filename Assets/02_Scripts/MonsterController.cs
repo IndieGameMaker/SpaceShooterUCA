@@ -19,8 +19,12 @@ public class MonsterController : MonoBehaviour
 
     [SerializeField] private bool _isDie = false;
 
+    private WaitForSeconds ws;
+
     void Start()
     {
+        ws = new WaitForSeconds(1.0f);
+
         _monsterTr = transform; // GetComponent<Transform>();
         _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
 
@@ -55,7 +59,7 @@ public class MonsterController : MonoBehaviour
                 _state = State.IDLE;
             }
 
-            yield return new WaitForSeconds(0.3f);
+            yield return ws;
         }
     }
 
