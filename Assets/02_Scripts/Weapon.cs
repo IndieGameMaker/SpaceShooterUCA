@@ -47,6 +47,7 @@ public class Weapon : MonoBehaviour
         // Random.Range(0, 2) => (0, 1) * 0.5 => (0, 0.5)
 
         Vector2 _offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        _muzzleFlash.material.mainTextureOffset = _offset;
 
         // 블랭크 효과
         _muzzleFlash.enabled = true;
