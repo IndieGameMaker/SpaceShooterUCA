@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
-            ShowMuzzleFlash();
+            StartCoroutine(ShowMuzzleFlash());
         }
     }
 
@@ -39,8 +39,15 @@ public class Weapon : MonoBehaviour
         Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
     }
 
-    void ShowMuzzleFlash()
+    // 코루틴 Coroutine
+    IEnumerator ShowMuzzleFlash()
     {
+        // 블랭크 효과
+        _muzzleFlash.enabled = true;
 
+        // Waiting...
+        yield return new WaitForSeconds(0.2f);
+
+        _muzzleFlash.enabled = false;
     }
 }
