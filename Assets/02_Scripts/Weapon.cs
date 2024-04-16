@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private AudioClip _fireSfx;
     [SerializeField] private MeshRenderer _muzzleFlash;
 
+    private Light _fireLight;
+
     private AudioSource _audio;
 
     void Start()
@@ -17,6 +19,9 @@ public class Weapon : MonoBehaviour
         _audio = GetComponent<AudioSource>();
         _muzzleFlash = _firePos.GetComponentInChildren<MeshRenderer>();
         _muzzleFlash.enabled = false;
+
+        _fireLight = _firePos.GetComponentInChildren<Light>();
+        _fireLight.intensity = 0.0f;
     }
 
     void Update()
