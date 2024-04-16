@@ -62,6 +62,9 @@ public class Weapon : MonoBehaviour
         Quaternion rot = Quaternion.Euler(Vector3.forward * angle);
         _muzzleFlash.transform.localRotation = rot;
 
+        // 조명
+        _fireLight.intensity = Random.Range(2.0f, 5.0f);
+
         // 블랭크 효과
         _muzzleFlash.enabled = true;
 
@@ -69,5 +72,6 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         _muzzleFlash.enabled = false;
+        _fireLight.intensity = 0.0f;
     }
 }
