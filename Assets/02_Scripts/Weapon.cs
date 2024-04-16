@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
+            ShowMuzzleFlash();
         }
     }
 
@@ -36,5 +37,10 @@ public class Weapon : MonoBehaviour
         _audio.PlayOneShot(_fireSfx, 0.8f);
 
         Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
+    }
+
+    void ShowMuzzleFlash()
+    {
+
     }
 }
