@@ -17,10 +17,10 @@ public class MonsterController : MonoBehaviour
     private Transform _monsterTr;
     private Transform _playerTr;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        _monsterTr = transform; // GetComponent<Transform>();
+        _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
     }
 
     // Update is called once per frame
