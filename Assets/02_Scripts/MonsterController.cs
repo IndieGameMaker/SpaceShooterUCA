@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
@@ -20,10 +21,12 @@ public class MonsterController : MonoBehaviour
     [SerializeField] private bool _isDie = false;
 
     private WaitForSeconds ws;
+    private NavMeshAgent agent;
 
     void Start()
     {
         ws = new WaitForSeconds(0.5f);
+        agent = GetComponent<NavMeshAgent>();
 
         _monsterTr = transform; // GetComponent<Transform>();
         _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
