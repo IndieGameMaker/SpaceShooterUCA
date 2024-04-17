@@ -78,6 +78,9 @@ public class MonsterController : MonoBehaviour
                     break;
 
                 case State.TRACE:
+                    // 추적 시작
+                    agent.SetDestination(_playerTr.position);
+                    agent.isStopped = false; // agent.Stop(); agent.Resume()
                     break;
 
                 case State.ATTACK:
