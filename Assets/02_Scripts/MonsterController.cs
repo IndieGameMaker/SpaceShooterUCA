@@ -76,6 +76,8 @@ public class MonsterController : MonoBehaviour
             switch (_state)
             {
                 case State.IDLE:
+                    // 추적 정지
+                    agent.isStopped = true;
                     break;
 
                 case State.TRACE:
