@@ -82,7 +82,7 @@ public class MonsterController : MonoBehaviour
                 case State.IDLE:
                     // 추적 정지
                     agent.isStopped = true;
-                    animator.SetBool("IsTrace", false);
+                    animator.SetBool(hashIsTrace, false);
                     break;
 
                 case State.TRACE:
@@ -90,7 +90,7 @@ public class MonsterController : MonoBehaviour
                     agent.SetDestination(_playerTr.position);
                     agent.isStopped = false; // agent.Stop(); agent.Resume()
                     // 추적 애니메이션으로 변경
-                    animator.SetBool("IsTrace", true);
+                    animator.SetBool(hashIsTrace, true);
                     break;
 
                 case State.ATTACK:
