@@ -22,11 +22,13 @@ public class MonsterController : MonoBehaviour
 
     private WaitForSeconds ws;
     private NavMeshAgent agent;
+    private Animator animator;
 
     void Start()
     {
         ws = new WaitForSeconds(0.5f);
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         _monsterTr = transform; // GetComponent<Transform>();
         _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
@@ -78,12 +80,15 @@ public class MonsterController : MonoBehaviour
                 case State.IDLE:
                     // 추적 정지
                     agent.isStopped = true;
+                    animator.SetBool("IsTrace", false);
                     break;
 
                 case State.TRACE:
                     // 추적 시작
                     agent.SetDestination(_playerTr.position);
                     agent.isStopped = false; // agent.Stop(); agent.Resume()
+                    // 추적 애니메이션으로 변경
+                    animator.SetBool("IsTrace", true);
                     break;
 
                 case State.ATTACK:
