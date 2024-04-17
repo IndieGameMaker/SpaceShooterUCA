@@ -24,6 +24,7 @@ public class MonsterController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
+    // Animator Controller의 Parameter Hash 추출
     private int hashIsTrace = Animator.StringToHash("IsTrace");
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit = Animator.StringToHash("Hit");
@@ -109,6 +110,14 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+            animator.SetTrigger(hashHit);
+        }
+    }
 }
 
 
