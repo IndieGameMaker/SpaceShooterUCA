@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-        ws = new WaitForSeconds(1.0f);
+        ws = new WaitForSeconds(0.5f);
 
         _monsterTr = transform; // GetComponent<Transform>();
         _playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
@@ -36,6 +36,7 @@ public class MonsterController : MonoBehaviour
         StartCoroutine(CheckMonsterState());
     }
 
+    // 몬스터의 상태값을 변경시키는 메소드
     IEnumerator CheckMonsterState()
     {
         while (_isDie == false)
@@ -63,4 +64,36 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    // 몬스터의 상태에 따라서 행동을 처리하는 메소드
+    IEnumerator MonsterAction()
+    {
+        while (!_isDie)
+        {
+            switch (_state)
+            {
+                case State.IDLE:
+                    break;
+
+                case State.TRACE:
+                    break;
+
+                case State.ATTACK:
+                    break;
+
+                case State.DIE:
+                    break;
+            }
+
+            yield return ws;
+        }
+    }
+
 }
+
+
+/*
+    NavMeshAgent의 길찾기 알고리즘
+
+    A* PathFinding 
+
+*/
