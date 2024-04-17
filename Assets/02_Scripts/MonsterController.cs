@@ -25,6 +25,7 @@ public class MonsterController : MonoBehaviour
     private Animator animator;
 
     private int hashIsTrace = Animator.StringToHash("IsTrace");
+    private int hashIsAttack = Animator.StringToHash("IsAttack");
 
     void Start()
     {
@@ -94,6 +95,8 @@ public class MonsterController : MonoBehaviour
                     break;
 
                 case State.ATTACK:
+                    // 공격애니메이션 처리
+                    animator.SetBool()
                     break;
 
                 case State.DIE:
