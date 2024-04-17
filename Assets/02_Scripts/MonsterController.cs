@@ -24,6 +24,8 @@ public class MonsterController : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
+    private int hashIsTrace = Animator.StringToHash("IsTrace");
+
     void Start()
     {
         ws = new WaitForSeconds(0.5f);
