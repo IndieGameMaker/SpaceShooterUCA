@@ -132,6 +132,7 @@ public class MonsterController : MonoBehaviour
             {
                 _state = State.DIE;
             }
+            // _state = (hp <= 0) ? State.DIE : _state;
         }
     }
 
