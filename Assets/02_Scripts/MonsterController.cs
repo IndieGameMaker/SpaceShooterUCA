@@ -62,8 +62,6 @@ public class MonsterController : MonoBehaviour
             //float distance = Vector3.Distance(_monsterTr.position, _playerTr.position);
             float distance = (_monsterTr.position - _playerTr.position).sqrMagnitude;
 
-            Debug.Log(Mathf.Sqrt(distance));
-
             if (distance <= _attackDist * _attackDist) // 공격 사정거리 이내인 경우
             {
                 _state = State.ATTACK;

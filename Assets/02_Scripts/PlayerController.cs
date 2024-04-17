@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private float speed = 5.0f;
 
     private Animator animator;
+
+    private int initHp = 100;
+    private int currHp = 100;
 
     void Start()
     {
@@ -39,7 +43,16 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            Debug.Log(coll.gameObject.name);
+            currHp -= 10;
+            if (currHp <= 0)
+            {
+                PlayerDie();
+            }
         }
+    }
+
+    private void PlayerDie()
+    {
+        Debug.Log("Player Die !!!");
     }
 }
