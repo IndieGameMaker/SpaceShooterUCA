@@ -1333,6 +1333,7 @@ MonoBehaviour:
   _traceDist: 10
   _attackDist: 2
   _isDie: 0
+  hp: 100
 --- !u!195 &989568571
 NavMeshAgent:
   m_ObjectHideFlags: 0
