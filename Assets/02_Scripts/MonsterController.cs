@@ -37,6 +37,7 @@ public class MonsterController : MonoBehaviour
         }
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     // 몬스터의 상태값을 변경시키는 메소드
