@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,14 +10,10 @@ public class PlayerController : MonoBehaviour
     private float r;
     private float speed = 5.0f;
 
-    [SerializeField]
-    private Animation anim;
-
     private Animator animator;
 
     void Start()
     {
-        anim = GetComponent<Animation>();   // Legacy Animation Type
         animator = GetComponent<Animator>();// Mecanim Animation Type
     }
 
@@ -38,33 +35,11 @@ public class PlayerController : MonoBehaviour
         //PlayerAnim();
     }
 
-    void PlayerAnim()
+    void OnTriggerEnter(Collider coll)
     {
-        if (v >= 0.1f) // Up Arrow, W // 전진
+        if (coll.CompareTag("PUNCH"))
         {
-            anim.CrossFade("RunF", 0.3f);
-        }
-        else if (v <= -0.1f) // 후진
-        {
-            anim.CrossFade("RunB", 0.3f);
-        }
-        else if (h >= 0.1f) // 오른쪽 이동
-        {
-            anim.CrossFade("RunR", 0.3f);
-        }
-        else if (h <= -0.1f) // 왼쪽 이동
-        {
-            anim.CrossFade("RunL", 0.3f);
-        }
-        else
-        {
-            anim.CrossFade("Idle", 0.1f);
-
-            // anim.clip = anim.GetClip("Idle");
-            // anim.Play()
+            Debug.Log(coll.gameObject.name);
         }
     }
-
-
-
 }
