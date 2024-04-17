@@ -91,12 +91,13 @@ public class MonsterController : MonoBehaviour
                     agent.SetDestination(_playerTr.position);
                     agent.isStopped = false; // agent.Stop(); agent.Resume()
                     // 추적 애니메이션으로 변경
+                    animator.SetBool(hashIsAttack, false);
                     animator.SetBool(hashIsTrace, true);
                     break;
 
                 case State.ATTACK:
                     // 공격애니메이션 처리
-                    animator.SetBool()
+                    animator.SetBool(hashIsAttack, true);
                     break;
 
                 case State.DIE:
