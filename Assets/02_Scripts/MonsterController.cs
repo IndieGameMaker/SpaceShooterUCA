@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,9 @@ public class MonsterController : MonoBehaviour
     private int hashIsTrace = Animator.StringToHash("IsTrace");
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit = Animator.StringToHash("Hit");
+    private int hashDie = Animator.StringToHash("Die");
+
+    [SerializeField] private int hp = 100;
 
     void Start()
     {
@@ -52,6 +56,8 @@ public class MonsterController : MonoBehaviour
     {
         while (_isDie == false)
         {
+            if (_state == State.DIE) yield break;
+
             // 두점간의 거리
             //float distance = Vector3.Distance(_monsterTr.position, _playerTr.position);
             float distance = (_monsterTr.position - _playerTr.position).sqrMagnitude;
@@ -103,6 +109,10 @@ public class MonsterController : MonoBehaviour
                     break;
 
                 case State.DIE:
+                    //애니메이션 
+                    animator.SetTrigger(hashDie);
+                    agent.isStopped = true;
+                    _isDie = true;
                     break;
             }
 
@@ -116,8 +126,16 @@ public class MonsterController : MonoBehaviour
         {
             Destroy(coll.gameObject);
             animator.SetTrigger(hashHit);
+
+            hp -= 20;
+            if (hp <= 0)
+            {
+                _state = State.DIE;
+            }
         }
     }
+
+
 }
 
 
