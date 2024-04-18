@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c41423065ba47969a8f0fd3ce48528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 820153331871343586, guid: 12b51dd8d16574afb803fc897820d054, type: 3}
+  monsterPrefab: {fileID: 0}
   points: []
 --- !u!4 &689606297
 Transform:
