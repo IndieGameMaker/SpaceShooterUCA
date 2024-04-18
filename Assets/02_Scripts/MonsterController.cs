@@ -33,6 +33,19 @@ public class MonsterController : MonoBehaviour
 
     [SerializeField] private int hp = 100;
 
+    void OnEnable()
+    {
+        // 이벤트 연결
+        PlayerController.OnPlayerDie += YouWin;
+    }
+
+    void OnDisable()
+    {
+        // 이벤트 해지
+        PlayerController.OnPlayerDie -= YouWin;
+    }
+
+
     void Start()
     {
         ws = new WaitForSeconds(0.5f);
