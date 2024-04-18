@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("PUNCH"))
+        if (currHp > 0 && coll.CompareTag("PUNCH"))
         {
             currHp -= 10;
             if (currHp <= 0)
