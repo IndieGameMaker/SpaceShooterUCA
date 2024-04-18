@@ -845,6 +845,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 0}
   points: []
+  monsterPool: []
+  maxPool: 10
   createTime: 3
   isGameOver: 0
 --- !u!4 &689606297

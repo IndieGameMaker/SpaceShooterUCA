@@ -125,11 +125,21 @@ public class MonsterController : MonoBehaviour
                     agent.isStopped = true;
                     _isDie = true;
                     GetComponent<CapsuleCollider>().enabled = false;
+
                     break;
             }
 
             yield return ws;
         }
+    }
+
+    void ReturnPool()
+    {
+        StopAllCoroutines();
+        _state = State.IDLE;
+        _isDie = false;
+        hp = 100;
+        this.gameObject.SetActive(false);
     }
 
     void OnCollisionEnter(Collision coll)
