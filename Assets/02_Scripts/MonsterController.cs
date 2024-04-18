@@ -48,7 +48,6 @@ public class MonsterController : MonoBehaviour
         PlayerController.OnPlayerDie -= YouWin;
     }
 
-
     void Awake()
     {
         ws = new WaitForSeconds(0.5f);
@@ -62,8 +61,6 @@ public class MonsterController : MonoBehaviour
         {
             Debug.LogError("Player not found!");
         }
-
-
     }
 
     // 몬스터의 상태값을 변경시키는 메소드
