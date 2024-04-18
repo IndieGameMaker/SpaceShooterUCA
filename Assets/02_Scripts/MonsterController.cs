@@ -136,6 +136,15 @@ public class MonsterController : MonoBehaviour
     }
 
 
+    public void YouWin()
+    {
+        Debug.Log("Dancing !!!");
+        // 몬스터 상태/행동 코루틴을 정지
+        StopAllCoroutines();
+
+        animator.SetTrigger("PlayerDie");
+        agent.isStopped = true;
+    }
 }
 
 
