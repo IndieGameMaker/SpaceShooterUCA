@@ -7,6 +7,13 @@ public class GameManager : MonoBehaviour
     public GameObject monsterPrefab;
     public List<Transform> points = new List<Transform>();
 
+    // 오브젝트 풀링
+    public List<GameObject> monsterPool = new List<GameObject>();
+
+    // 오브젝트 풀링 최댓값
+    public int maxPool = 10;
+
+
     // 몬스터 생성 주기
     public float createTime = 3.0f;
 
@@ -37,12 +44,15 @@ public class GameManager : MonoBehaviour
         // Resources 폴더에 있는 Asset(Prefab)을 로드
         monsterPrefab = Resources.Load<GameObject>("Monster");
 
+        // 몬스터 풀 생성
+        CreatePool();
+
         // 몬스터 생성 - 방법 #1
         // 이벤트명.Invoke();
         // Invoke("함수명", 지연시간);
 
         // InvokeRepeating(nameof(CreateMonster), 2.0f, createTime);
-        StartCoroutine(CreateMonster());
+        // StartCoroutine(CreateMonster());
     }
 
     IEnumerator CreateMonster()
@@ -57,6 +67,18 @@ public class GameManager : MonoBehaviour
             Instantiate(monsterPrefab, pos, Quaternion.identity);
 
             yield return new WaitForSeconds(createTime);
+        }
+    }
+
+    void CreatePool()
+    {
+        for (int i = 0; i < maxPool; i++)
+        {
+            var monster = Instantiate(monsterPrefab);
+            monster.name = $"Monster_{i}";
+            monster.SetActive(false);
+
+            monsterPool.Add(monster);
         }
     }
 }
