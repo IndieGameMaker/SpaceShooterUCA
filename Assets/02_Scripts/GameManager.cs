@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CreateMonster()
     {
+        yield return new WaitForSeconds(2.0f);
+
         while (!isGameOver)
         {
             // 난수 발생
