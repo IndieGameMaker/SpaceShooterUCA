@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         // Invoke("함수명", 지연시간);
 
         // InvokeRepeating(nameof(CreateMonster), 2.0f, createTime);
-        // StartCoroutine(CreateMonster());
+        StartCoroutine(CreateMonster());
     }
 
     IEnumerator CreateMonster()
@@ -64,7 +64,18 @@ public class GameManager : MonoBehaviour
             // 생성할 위치 추출
             Vector3 pos = points[idx].position;
             // 몬스터를 생성
-            Instantiate(monsterPrefab, pos, Quaternion.identity);
+            // Instantiate(monsterPrefab, pos, Quaternion.identity);
+
+            // 몬스터를 오브젝트 풀링에서 추출
+            foreach (var monster in monsterPool)
+            {
+                if (monster.activeSelf == false)
+                {
+                    monster.transform.position = pos;
+                    monster.SetActive(true);
+                    break;
+                }
+            }
 
             yield return new WaitForSeconds(createTime);
         }
