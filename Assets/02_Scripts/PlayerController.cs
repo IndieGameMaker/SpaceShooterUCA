@@ -16,6 +16,19 @@ public class PlayerController : MonoBehaviour
     private int initHp = 100;
     private int currHp = 100;
 
+    // 이벤트(Event) 생성
+    // 델리게이트 (Delegate : 대리자)
+    /*
+        데이터타입 변수명 = 값;
+        델리게이트 변수명 = 함수;
+    */
+
+    // public delegate [저장할_함수_유형]
+    public delegate void PlayerDieHandler();
+    // 이벤트 선언
+    public static event PlayerDieHandler OnPlayerDie;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();// Mecanim Animation Type
@@ -54,11 +67,11 @@ public class PlayerController : MonoBehaviour
     private void PlayerDie()
     {
         // 스테이지에 생성된 모든 몬스터를 추출해서 배열 저장
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+        // GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
 
-        foreach (var monster in monsters)
-        {
-            monster.GetComponent<MonsterController>().YouWin();
-        }
+        // foreach (var monster in monsters)
+        // {
+        //     monster.GetComponent<MonsterController>().YouWin();
+        // }
     }
 }
