@@ -59,7 +59,8 @@ public class PlayerController : MonoBehaviour
             currHp -= 10;
             if (currHp <= 0)
             {
-                PlayerDie();
+                OnPlayerDie?.Invoke(); // Event Raise !!
+                //PlayerDie();
             }
         }
     }
