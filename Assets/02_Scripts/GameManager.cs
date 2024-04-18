@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     // 몬스터 생성 주기
     public float createTime = 3.0f;
 
+    void OnEnable()
+    {
+        PlayerController.OnPlayerDie += () => CancelInvoke(); // Lamda 식
+    }
+
     void Start()
     {
         // SpawnPointGroup GameObject를 검색
@@ -24,7 +29,7 @@ public class GameManager : MonoBehaviour
         // 이벤트명.Invoke();
         // Invoke("함수명", 지연시간);
 
-        InvokeRepeating("CreateMonster", 2.0f, createTime);
+        InvokeRepeating(nameof(CreateMonster), 2.0f, createTime);
     }
 
     void CreateMonster()

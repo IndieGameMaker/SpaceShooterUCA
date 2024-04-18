@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _state: 0
-  _traceDist: 10
+  _traceDist: 50
   _attackDist: 2
   _isDie: 0
   hp: 100
