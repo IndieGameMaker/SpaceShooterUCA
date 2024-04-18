@@ -24,9 +24,11 @@ public class PlayerController : MonoBehaviour
     */
 
     // public delegate [저장할_함수_유형]
-    public delegate void PlayerDieHandler();
-    // 이벤트 선언
-    public static event PlayerDieHandler OnPlayerDie;
+    // public delegate void PlayerDieHandler();
+    // // 이벤트 선언
+    // public static event PlayerDieHandler OnPlayerDie;
+
+    public static Action OnPlayerDie;
 
 
     void Start()
