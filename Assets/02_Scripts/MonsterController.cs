@@ -126,6 +126,7 @@ public class MonsterController : MonoBehaviour
                     _isDie = true;
                     GetComponent<CapsuleCollider>().enabled = false;
 
+                    Invoke(nameof(ReturnPool), 3.0f);
                     break;
             }
 
