@@ -8,4 +8,10 @@ public class MyGizmos : MonoBehaviour
 
     [Range(0.2f, 2.0f)]
     public float radius = 0.3f;
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = this.color;
+        Gizmos.DrawSphere(transform.position, this.radius);
+    }
 }
