@@ -53,6 +53,12 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerDie()
     {
-        Debug.Log("Player Die !!!");
+        // 스테이지에 생성된 모든 몬스터를 추출해서 배열 저장
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        foreach (var monster in monsters)
+        {
+            monster.GetComponent<MonsterController>().YouWin();
+        }
     }
 }
