@@ -37,6 +37,9 @@ public class MonsterController : MonoBehaviour
     {
         // 이벤트 연결
         PlayerController.OnPlayerDie += YouWin;
+
+        StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     void OnDisable()
@@ -46,7 +49,7 @@ public class MonsterController : MonoBehaviour
     }
 
 
-    void Start()
+    void Awake()
     {
         ws = new WaitForSeconds(0.5f);
         agent = GetComponent<NavMeshAgent>();
@@ -60,8 +63,7 @@ public class MonsterController : MonoBehaviour
             Debug.LogError("Player not found!");
         }
 
-        StartCoroutine(CheckMonsterState());
-        StartCoroutine(MonsterAction());
+
     }
 
     // 몬스터의 상태값을 변경시키는 메소드
