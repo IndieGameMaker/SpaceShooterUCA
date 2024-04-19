@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 820153331871449082}
   - component: {fileID: 820153331342719738}
   - component: {fileID: 820153331342719739}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_wrist
   m_TagString: PUNCH
   m_Icon: {fileID: 0}
@@ -1610,7 +1610,7 @@ GameObject:
   - component: {fileID: 820153331871449012}
   - component: {fileID: 820153331463811457}
   - component: {fileID: 820153331463811462}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L_wrist
   m_TagString: PUNCH
   m_Icon: {fileID: 0}
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 820153332110734814}
   - component: {fileID: 820153332110734810}
   - component: {fileID: 820153332110734809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Monster
   m_TagString: MONSTER
   m_Icon: {fileID: 0}

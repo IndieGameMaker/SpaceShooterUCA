@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
-    private int initHp = 1000;
-    private int currHp = 1000;
+    private int initHp = 100;
+    private int currHp = 100;
 
     // 이벤트(Event) 생성
     // 델리게이트 (Delegate : 대리자)

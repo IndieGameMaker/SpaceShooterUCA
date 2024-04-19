@@ -19,8 +19,8 @@ TagManager:
   - 
   - ENEMY
   - PLAYER
-  - 
-  - 
+  - MONSTER_BODY
+  - MONSTER_PUNCH
   - 
   - 
   - 
