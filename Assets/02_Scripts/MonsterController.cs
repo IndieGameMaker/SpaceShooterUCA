@@ -169,6 +169,11 @@ public class MonsterController : MonoBehaviour
         animator.SetTrigger("PlayerDie");
         agent.isStopped = true;
     }
+
+    void OnTriggerEnter(Collider coll)
+    {
+        Debug.Log(coll.gameObject.name);
+    }
 }
 
 
