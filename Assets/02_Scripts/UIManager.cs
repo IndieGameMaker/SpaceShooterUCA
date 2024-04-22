@@ -9,6 +9,9 @@ using TMPro; // TextMeshPro
 
 public class UIManager : MonoBehaviour
 {
+    public Button startGameBtn;
+    public Button optionsBtn;
+    public Button shopsBtn;
 
     public void OnStartGameButtonClick()
     {
