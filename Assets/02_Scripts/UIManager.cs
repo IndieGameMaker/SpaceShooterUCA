@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         startGameBtn.onClick.AddListener(() =>
         {
             Debug.Log("시작버튼 클릭");
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Play");
         });
 
         optionsBtn.onClick.AddListener(() =>

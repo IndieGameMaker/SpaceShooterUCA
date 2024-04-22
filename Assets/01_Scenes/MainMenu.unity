@@ -989,6 +989,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0116cb660171a4498bd8ffb485d488a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGameBtn: {fileID: 180891054}
+  optionsBtn: {fileID: 667294089}
+  shopsBtn: {fileID: 1516132309}
 --- !u!4 &1502802581
 Transform:
   m_ObjectHideFlags: 0
