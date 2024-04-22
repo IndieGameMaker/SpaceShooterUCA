@@ -13,6 +13,19 @@ public class UIManager : MonoBehaviour
     public Button optionsBtn;
     public Button shopsBtn;
 
+    void OnEnable()
+    {
+        startGameBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("시작버튼 클릭");
+        });
+
+        optionsBtn.onClick.AddListener(() =>
+        {
+            Debug.Log("옵션버튼 클릭");
+        });
+    }
+
     public void OnStartGameButtonClick()
     {
         Debug.Log("Click StartGame");
