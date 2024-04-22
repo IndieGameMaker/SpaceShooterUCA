@@ -26,6 +26,9 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        // Ray 표시
+        Debug.DrawRay(_firePos.position, _firePos.forward * 10.0f, Color.green);
+
         if (Input.GetMouseButtonDown(0))
         {
             Fire();
@@ -41,7 +44,7 @@ public class Weapon : MonoBehaviour
 
         _audio.PlayOneShot(_fireSfx, 0.8f);
 
-        Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
+        // Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
     }
 
     // 코루틴 Coroutine
