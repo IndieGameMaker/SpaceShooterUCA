@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
 
     private AudioSource _audio;
 
+    private RaycastHit hit;
+
     void Start()
     {
         _audio = GetComponent<AudioSource>();
@@ -33,6 +35,12 @@ public class Weapon : MonoBehaviour
         {
             Fire();
             StartCoroutine(ShowMuzzleFlash());
+
+            // (광선원점, 광선방향, 충돌객제정보, 광선의거리)
+            if (Physics.Raycast(_firePos.position, _firePos.forward, out hit, 10.0f))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+            }
         }
     }
 
