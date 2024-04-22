@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
 
     private AudioSource _audio;
 
-    private RaycastHit hit;
+    //private RaycastHit hit;
 
     void Start()
     {
@@ -37,9 +37,14 @@ public class Weapon : MonoBehaviour
             StartCoroutine(ShowMuzzleFlash());
 
             // (광선원점, 광선방향, 충돌객제정보, 광선의거리)
-            if (Physics.Raycast(_firePos.position, _firePos.forward, out hit, 10.0f))
+            if (Physics.Raycast(_firePos.position, _firePos.forward, out RaycastHit hit, 10.0f))
             {
                 Debug.Log(hit.collider.gameObject.name);
+
+                if (hit.collider.CompareTag("MONSTER"))
+                {
+                    hit.collider.GetComponent<MonsterController>().Damage();
+                }
             }
         }
     }
