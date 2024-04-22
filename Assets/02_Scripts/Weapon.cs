@@ -37,14 +37,11 @@ public class Weapon : MonoBehaviour
             StartCoroutine(ShowMuzzleFlash());
 
             // (광선원점, 광선방향, 충돌객제정보, 광선의거리)
-            if (Physics.Raycast(_firePos.position, _firePos.forward, out RaycastHit hit, 10.0f))
+            if (Physics.Raycast(_firePos.position, _firePos.forward, out RaycastHit hit, 10.0f, 1 << 10)) // 2^10
             {
                 Debug.Log(hit.collider.gameObject.name);
 
-                if (hit.collider.CompareTag("MONSTER"))
-                {
-                    hit.collider.GetComponent<MonsterController>().Damage();
-                }
+                hit.collider.GetComponent<MonsterController>().Damage();
             }
         }
     }
