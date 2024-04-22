@@ -54,7 +54,7 @@ public class Weapon : MonoBehaviour
 
         _audio.PlayOneShot(_fireSfx, 0.8f);
 
-        // Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
+        Instantiate(_bulletPrefab, _firePos.position, _firePos.rotation);
     }
 
     // 코루틴 Coroutine
