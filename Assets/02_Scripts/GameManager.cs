@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +20,10 @@ public class GameManager : MonoBehaviour
     public float createTime = 3.0f;
 
     public bool isGameOver = false;
+
+    [Header("UI Settings")]
+    public Image hpBar;
+
 
     void OnEnable()
     {
