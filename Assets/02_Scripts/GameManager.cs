@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
         {
             totScore += value;
             scoreText.text = $"SCORE : {totScore:00000}";
+
+            // 데이터 저장
+            PlayerPrefs.SetInt("TOT_SCORE", totScore);
         }
     }
 
@@ -55,6 +58,9 @@ public class GameManager : MonoBehaviour
         // GameManager.Instance.TotScore = 10; // Write Set
 
         Instance = this;
+        // 데이터 로딩
+        totScore = PlayerPrefs.GetInt("TOT_SCORE", 0);
+        scoreText.text = $"SCORE : {totScore:00000}";
     }
 
     void OnEnable()
