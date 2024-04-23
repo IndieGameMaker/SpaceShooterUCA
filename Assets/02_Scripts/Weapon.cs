@@ -102,4 +102,6 @@ public class Weapon : MonoBehaviour
     MUSE Behaviour Tree
     Sentise
 
+    Contribute GI => Lightmap Static
+
 */
