@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
             currHp -= 10;
 
             //GameObject.Find("GameManager").GetComponent<GameManager>().DisplayHealth((float)currHp / (float)initHp);
+            GameManager.Instance.DisplayHealth((float)currHp / (float)initHp);
 
             if (currHp <= 0)
             {
