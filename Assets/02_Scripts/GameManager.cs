@@ -9,16 +9,14 @@ public class GameManager : MonoBehaviour
     public GameObject monsterPrefab;
     public List<Transform> points = new List<Transform>();
 
+    [Header("Object Pooling")]
     // 오브젝트 풀링
     public List<GameObject> monsterPool = new List<GameObject>();
-
     // 오브젝트 풀링 최댓값
     public int maxPool = 10;
 
-
     // 몬스터 생성 주기
     public float createTime = 3.0f;
-
     public bool isGameOver = false;
 
     [Header("UI Settings")]
