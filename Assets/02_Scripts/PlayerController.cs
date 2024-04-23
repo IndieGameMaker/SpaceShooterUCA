@@ -59,6 +59,9 @@ public class PlayerController : MonoBehaviour
         if (currHp > 0 && coll.CompareTag("PUNCH"))
         {
             currHp -= 10;
+
+            GameObject.Find("GameManager").GetComponent<GameManager>().DisplayHealth((float)currHp / (float)initHp);
+
             if (currHp <= 0)
             {
                 OnPlayerDie?.Invoke(); // Event Raise !!

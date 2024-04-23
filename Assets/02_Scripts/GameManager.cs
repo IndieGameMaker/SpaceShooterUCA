@@ -98,4 +98,9 @@ public class GameManager : MonoBehaviour
             monsterPool.Add(monster);
         }
     }
+
+    public void DisplayHealth(float fillAmount)
+    {
+        hpBar.fillAmount = fillAmount;
+    }
 }
