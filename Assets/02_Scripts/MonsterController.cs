@@ -125,6 +125,9 @@ public class MonsterController : MonoBehaviour
                     _isDie = true;
                     GetComponent<CapsuleCollider>().enabled = false;
 
+                    // 주인공의 점수를 누적
+                    GameManager.Instance.TotScore = 10;
+
                     Invoke(nameof(ReturnPool), 3.0f);
                     break;
             }
