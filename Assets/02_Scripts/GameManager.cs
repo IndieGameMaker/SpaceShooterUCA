@@ -31,9 +31,29 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Settings")]
     public Image hpBar;
+    public TMP_Text scoreText;
+
+    private int totScore = 0;
+
+    // 프로퍼티 getter/setter
+    public int TotScore
+    {
+        get
+        {
+            return totScore;
+        }
+        set
+        {
+            totScore += value;
+            scoreText.text = $"SCORE : {totScore:00000}";
+        }
+    }
 
     void Awake()
     {
+        // int aaa = GameManager.Instance.TotScore; // Read Get
+        // GameManager.Instance.TotScore = 10; // Write Set
+
         Instance = this;
     }
 
