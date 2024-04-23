@@ -4,8 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
+    Observer Pattern
+    State Pattern
+    Object Pooling
+    Singleton Pattern
+*/
+
 public class GameManager : MonoBehaviour
 {
+    // 싱글턴 변수 선언
+    public static GameManager Instance = null;
+
     public GameObject monsterPrefab;
     public List<Transform> points = new List<Transform>();
 
@@ -22,6 +32,10 @@ public class GameManager : MonoBehaviour
     [Header("UI Settings")]
     public Image hpBar;
 
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void OnEnable()
     {
